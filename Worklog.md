@@ -1,5 +1,9 @@
 # Worklog
 
+## 15 January
+
+- Started working on the first version of plutt
+
 ## 14 January
 
 - Finish setting up computer
