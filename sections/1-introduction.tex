@@ -1,0 +1,77 @@
+
+\chapter{Introduction}
+
+\section{Background}
+\acp{MFE} is a web \ac{FE} architecture style, where the \ac{FE} is composed of multiple simultaneously running applications. As the name implies it is heavily inspired by the microservice architecture style. It promises \ac{DX} improvements similar to those that microservices provide, like team independence, clear code responsibility, and high cohesion. Additionally \acp{MFE} promises a higher cohesion between \ac{BE} and \ac{FE}, mitigating feature latency that comes from asynchronous deployment. In practice this means that the delay from starting to implement a feature to it reaching market, should be decreased when using \acp{MFE} \cite{Celik}.
+
+The technology was introduced November 2016 in ThoughtWorks technology radar, as a technology to assess. In April 2019 the technology got upgraded to the category adopt, which is the highest recommendation ThoughtWorks gives to a technology \cite{ThoughtWorks}. Shortly after this, Cam Jackson \citeauthor{Jackson2019} advocated the use of \acp{MFE} in a blog post \cite{Jackson2019}. The search term ``micro frontend architecture'' became significantly more popular after these two occurances, and dozens of blog posts discussing the subject emerged during the summer of 2019 \cite{Google}.
+
+\section{Problem Statement}
+Critics of \acp{MFE} are sceptical of the performance impact when using this technology \cite{LarkinTheLarkInn2019,Evakalliojevakallio2019}. For an implementation to be a \ac{MFE} the client (web browser) has to perform a separate network request for every component of the \ac{FE}, as well as run every application concurrently. This could introduce larger bundle sizes and higher load times to download the whole web page. Additionally the performance overhead of running multiple applications concurrently could affect the \ac{UX}.
+
+There are no studies indicating whether that the critics of \acp{MFE} are correct, even if some of them are very influential and experienced web developers. This is to be expected, given the limited number of studies in the area. As far as I know there are only two academic studies including \acp{MFE}s. One is a simple case study exploring the subject \cite{Yang2019}, and the other explores mock applications using \acp{MFE} \cite{baumann2019micro}.
+
+The feasibility of using \acp{MFE} is highly promoted by experts such as \citeauthor{Jackson2019}, ThoughtWorks, and more. At the same time engineers from Facebook's React engineering team (specifically Dan Abromov and Sebastian Markbåge), as well as maintainers from webpack (especially Sean Larkin), and more developers question the feasibility of this new technology \cite{Denning}. \citeauthor{Denning} claims that critics do not fully understand the technology and many developers claim to already use the technology with great success \cite{Noel,ThoughtWorks}.
+
+\section{Problem}
+
+The feasibility of \acp{MFE} are unknown, as the performance impacts are not known. It is believed that \ac{DX} could be improved by using \acp{MFE}, but the technology is criticised for possibly introducing a large negative performance impact, which in turn affects \ac{UX}.
+
+
+It would be interesting to measure the \ac{UX} performance impact when using \acp{MFE}. If it could be shown that a complex production facing web application could be transformed, to use a \ac{MFE} architecture \textit{without} a significant performance impact, the criticism regarding performance can be rejected. The problem can be condensed into the following research question:
+
+\begin{center}
+\begin{tabular}{p{0.28\textwidth}p{0.60\textwidth}}
+     \textbf{Research Question:} & Is it possible to transform a monolithic complex production facing web application, to use a \ac{MFE} architecture, without \ac{UX} being significantly affected?
+\end{tabular}
+\end{center}
+
+\section{Hypothesis}
+It is possible to implement a monolithic complex web application using a \ac{MFE} architecture, without a large negative impact on performance and \ac{UX}.
+
+\section{Purpose}
+The purpose is to evaluate the feasibility of using \acp{MFE}, regarding \ac{UX}. The impact on \ac{DX} will not be evaluated. Assuming that \ac{DX} is positively impacted, there is a value in knowing if there is a trade-off between \ac{DX} and \ac{UX} or if \ac{UX} impacts are negligible.
+
+\section{Goal}
+The goal is to try to transform a monolithic complex web app, to using a \ac{MFE} architecture and compare performance between the monolithic web page and the \ac{MFE} web page. The attempt is that the \ac{MFE} page will have similar performance to the monolithic page, as this would mean that only \ac{DX} has to be considered when evaluating the use of \acp{MFE}.
+
+\section{Tasks}
+Initially a literature study will be conducted with two purposes:
+
+\begin{enumerate}
+    \item Evaluate the different methods for implementing a \ac{MFE} architecture.
+    \item Decide on quantifiable performance metrics that have shown an impact on \ac{UX}. Likely metrics could be bundle size, time to first interaction, or time to first render. As there exists extensive research into this field, the chosen metrics will be a very trustworthy measurement of \ac{UX} impact.
+\end{enumerate}
+
+When an implementation and evaluation method is chosen, a complex monolithic web application will be re-implemented, using a \ac{MFE} architecture. When the modified web page is created the original and modified page can be compared, using the chosen performance metrics.
+
+Finally the results will be evaluated and analyzed. The research question will be answered. All of this will be compiled into the thesis.
+
+\section{Method}
+The project will use an empirical method. There exists quantifiable measurements, and the correlation between these and \ac{UX} are very extensively proven. Therefore, there exists a good foundation for conducting performance tests on web pages, and then from analysis of these measurements deduce \ac{UX} impact.
+
+The biggest flaw with the chosen method is that it does not provide any method for proving that \acp{MFE} lead to a negative \ac{UX} impact. If the modified page is significantly worse than the original page it only proves that this specific page became worse, which could be because of a poor implementation. If the modified page has similar performance as the original page it proves that it is possible to create a \ac{MFE} web page with no significant performance degradation. Therefore, the hypothesis can be proven, but not rejected.
+
+\section{Supervisor and Examiner}
+
+My supervisor from KTH will be Martin Monperrus. My examiner from KTH will be Benoit Baudry.
+
+The project will be conducted at DigitalRoute who will provide Tommy Gunnarsson as a supervisor. They will also provide me with any necessary equipment like a computer, and access to all of the development tools used at DigitalRoute.
+
+\section{Eligibility and study planning}
+
+All my courses from my bachelor are completed. I have completed more than 60 credits of advanced courses in my master. During my master thesis, I will conduct one 7.5 credit course, and after my master thesis I will have finished all courses for my master.
+
+\section{Milestone chart}
+
+The project will start on 13 January and end on 29 May. There will be the following milestones:
+
+\textbf{7 February:} The project plan and literature study is finished. At this stage the method for implementation and performance evaluation will be chosen.
+
+\textbf{17 April:} The modified web page will be finished. At this stage performance tests can be conducted.
+
+\textbf{15 May:} The first draft of the Thesis will be finished. If it is accepted a thesis presentation date can be chosen.
+
+\textbf{22 May:} The project presentation has been conducted and peer reviews have been provided.
+
+\textbf{29 May:} The final thesis report is submitted.
