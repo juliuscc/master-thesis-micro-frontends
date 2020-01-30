@@ -2,18 +2,27 @@
 \chapter{Introduction}
 
 \section{Background}
-\acp{MFE} is a web \ac{FE} architecture style, where the \ac{FE} is composed of multiple simultaneously running applications. As the name implies it is heavily inspired by the microservice architecture style. It promises \ac{DX} improvements similar to those that microservices provide, like team independence, clear code responsibility, and high cohesion. Additionally \acp{MFE} promises a higher cohesion between \ac{BE} and \ac{FE}, mitigating feature latency that comes from asynchronous deployment. In practice this means that the delay from starting to implement a feature to it reaching market, should be decreased when using \acp{MFE} \cite{Celik}.
+\acp{MFE} is a web \ac{FE} architecture style, where the \ac{FE} is composed of multiple simultaneously running applications. As the name implies it is heavily inspired by the microservice architecture style. It promises \ac{DX} improvements similar to those that microservices provide, like team independence, clear code responsibility, and high cohesion. Additionally \acp{MFE} promises a higher cohesion between \ac{BE} and \ac{FE}, mitigating feature latency that comes from asynchronous deployment. In practice this means that the delay from starting to implement a feature to it reaching market, should be decreased when using \acp{MFE} \cite{Celik}. \textbf{ADD SOURCES!!!}
 
-The technology was introduced November 2016 in ThoughtWorks technology radar, as a technology to assess. In April 2019 the technology got upgraded to the category adopt, which is the highest recommendation ThoughtWorks gives to a technology \cite{ThoughtWorks}. Shortly after this, Cam Jackson \citeauthor{Jackson2019} advocated the use of \acp{MFE} in a blog post \cite{Jackson2019}. The search term ``micro frontend architecture'' became significantly more popular after these two occurances, and dozens of blog posts discussing the subject emerged during the summer of 2019 \cite{Google}.
 
 \section{Problem Statement}
-Critics of \acp{MFE} are sceptical of the performance impact when using this technology \cite{LarkinTheLarkInn2019,Evakalliojevakallio2019}. For an implementation to be a \ac{MFE} the client (web browser) has to perform a separate network request for every component of the \ac{FE}, as well as run every application concurrently. This could introduce larger bundle sizes and higher load times to download the whole web page. Additionally the performance overhead of running multiple applications concurrently could affect the \ac{UX}.
 
-There are no studies indicating whether that the critics of \acp{MFE} are correct, even if some of them are very influential and experienced web developers. This is to be expected, given the limited number of studies in the area. As far as I know there are only two academic studies including \acp{MFE}s. One is a simple case study exploring the subject \cite{Yang2019}, and the other explores mock applications using \acp{MFE} \cite{baumann2019micro}.
+Write about how teams should be very divided and independent
 
-The feasibility of using \acp{MFE} is highly promoted by experts such as \citeauthor{Jackson2019}, ThoughtWorks, and more. At the same time engineers from Facebook's React engineering team (specifically Dan Abromov and Sebastian Markbåge), as well as maintainers from webpack (especially Sean Larkin), and more developers question the feasibility of this new technology \cite{Denning}. \citeauthor{Denning} claims that critics do not fully understand the technology and many developers claim to already use the technology with great success \cite{Noel,ThoughtWorks}.
+Write about how teams would like to try \ac{MFE} but should not edit code from other teams.
 
 \section{Problem}
+
+Is it possible to implement \ac{MFE} without changing other parts of the code base? Location transparency and self contained micro frontends. Three artifacts are introduced:
+
+\begin{description}
+\item[Construct] Self contained micro frontends.
+\item[Instantiation] Plutt -- A build tool for self contained micro frontends.
+\item[Method] The method of creating self contained micro frontends.
+\end{description}
+
+
+\textbf{Old problem}
 
 The feasibility of \acp{MFE} are unknown, as the performance impacts are not known. It is believed that \ac{DX} could be improved by using \acp{MFE}, but the technology is criticised for possibly introducing a large negative performance impact, which in turn affects \ac{UX}.
 
@@ -47,7 +56,9 @@ When an implementation and evaluation method is chosen, a complex monolithic web
 
 Finally the results will be evaluated and analyzed. The research question will be answered. All of this will be compiled into the thesis.
 
-\section{Method}
+\section{Research Methodology}
+
+\section{Old Method}
 The project will use an empirical method. There exists quantifiable measurements, and the correlation between these and \ac{UX} are very extensively proven. Therefore, there exists a good foundation for conducting performance tests on web pages, and then from analysis of these measurements deduce \ac{UX} impact.
 
 The biggest flaw with the chosen method is that it does not provide any method for proving that \acp{MFE} lead to a negative \ac{UX} impact. If the modified page is significantly worse than the original page it only proves that this specific page became worse, which could be because of a poor implementation. If the modified page has similar performance as the original page it proves that it is possible to create a \ac{MFE} web page with no significant performance degradation. Therefore, the hypothesis can be proven, but not rejected.

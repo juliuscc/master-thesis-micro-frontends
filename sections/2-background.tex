@@ -1,17 +1,11 @@
 \chapter{Background}
 
-\section{Micro Frontends}
-Micro frontends is an architectural style for scaling \ac{FE} development, so that many teams can work on the same project by enabling team independence \cite{Jackson2019}. It relies on dividing an \ac{FE} into multiple independently deliverable components that can be composed into a cohesive \ac{FE}. \acp{MFE} are related to microservices and share many of the same characteristics \cite[ch.~1]{Gears2020}. An important common aspect is the possibility for independent deployability \cite{Jackson2019}, where teams can deploy any changes to software owned by them, without affecting other teams. Some of the benefits from using \acp{MFE} are: simple decoupled codebases, independent deployment, autonomous teams \cite{Jackson2019}, and greater customer focus \cite[ch.~1]{Gears2020}.
+\section{Microservices}
+Microservices is a software development method where systems are divided into smaller parts, called microservices, that can be individually deployed \cite{Richardson2019}. In turn, this enables low coupling, high cohesion, and strong composibility \cites[ch.~1]{Newman2015a}{Richardson2019}. Microservices are focused on performing single tasks really well, and implementing functionality by composing multiple microservices. It also enables multiple developers to work on a common codebase while minimizing obstruction, which becomes more notable in larger systems, with a greater number of developers \cite{Newman2015a}. This is also referred to as independence.
 
-According to some \acp{MFE} are related to vertical slicing \cite[ch.~1]{Gears2020}, a software decomposition strategy based on composing software in functionally coherent slices that fully implement features \cite{Ratner2011}. This is opposite to horizontal slicing, where software is composed of modules that fulfill the same technological purpose like database-, entity-, controller-, boundary-layer \cite{Ratner2011}.
+A central aspect of microservices is the concept of ``vertical slicing'' as a decomposition strategy, which is an important facilitator of team independence \cite{Familiar2015,Ratner2011}. \citeauthor{Familiar2015} describes this as: 
+\blockquote{Traditionally, we have used separation of concerns, a design principle for separating implementation into distinct layers in order to define horizontal seams in our application architecture. Microservice architecture applies separation of concern to identify vertical seams that define their isolation and autonomous nature. \cite[p.~xx]{Familiar2015}}
 
-There are many different integration approaches, for bundling the final \ac{FE} into a combined entity. The main categories are build-time integration, server-side integration, and client-side integration \cite{Jackson2019, Gears2020}. There is also route based integration or loosely coupled \acp{MFE} where the \ac{FE} consists of separate web pages served on different routes, that are connected with links \cites[ch.~2]{Gears2020}{ Yang2019}\cite{Yang2019}. Build-time integration does not fit all definitions of \acp{MFE} \cite{Gears2020} and there exists a consensus that using build-time integration looses many of the benefits of using \acp{MFE} \cite{Jackson2019}.
 
-Server-side integration is when a \ac{FE} is split into fragments, which are combined in run-time \cite{Jackson2019, Gears2020}. This can be done by using Server Side Includes \cite{Gears2020,Jackson2019,Fagan}. A drawback with using server-side integration is that it does not enable dynamic client interactions. \cite[ch.~4]{Gears2020}. Dynamic in this case refers to the client application being able to update based on user interactions, without a page reload.
-
-Client-side integration techniques are the most discussed \acp{MFE} techniques, as many modern web pages require dynamic application design. Client-side integration techniques can be categorised into many categories like: iframes, web components, and meta frameworks (also know as unified single page applications). \textbf{cite at least jackson and gears. Maybe also the google scholar one}
-
-\section{Client-Side Integration Techniques}
-
-% \section{\ac{MFE} frameworks}
-
+\section{Maybe write about self contained systems (SCS)}
+http://scs-architecture.org/
