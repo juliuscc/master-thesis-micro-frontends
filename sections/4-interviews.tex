@@ -1,0 +1,50 @@
+\chapter{Surveying the Industry}
+\label{sec:interviews}
+
+A qualitative survey was conducted with five industry experts, to understand how micro front-ends are used in practice and what problems they are applied to. The purpose was to discover aspects that can not be found in existing literature, and compile a common collection of micro front-end knowledge. This contributes to a knowledge base that can be used for developing Plutt and to help other micro front-end research.
+
+\section{How the Interviews Were Conducted}
+
+The experts interviewed were chosen based on their contributions to improving micro front-end methodologies or technologies, as well as having an extensive experience in working with micro front-ends. Some were found by their contributions being very public, and others were found recursively by asking the other experts.
+
+To minimize the risk for bias, the questions were standardized. This also made it easier to compare the answers and understand what the experts agreed on and disagreed on. The questions were open ended, and unstructured counter questions were asked to further extract relevant knowledge. The interviews were between 60 and 90 minutes long\footnote{One interview took 4 hours, even though I had planned for 60-90 minutes. A lot of that time was discussing implementation details that is not relevant to the report. So the \textit{relevant} content is about the same as other interviews. Is that noteworthy, or should I just write that the interviews took 60-90 minutes?} and because of large geographical distances they were conducted over video call. They were recorded and can accessed by request.
+
+\subsection{The Industry Experts who Were Interviewed}
+
+\begin{description}
+    \item[Michael Geers] is a developer who has worked many years for \textit{neuland - Büro für Informatik}. At neuland - Büro für Informatik he has helped large scale e-commerce web pages to use using micro front-ends. Michael is also the creator of \texttt{https://micro-frontends.org/} which at the time of writing is the first google result when searching for \textit{``micro frontends''}, and which is therefore a influential introduction to micro front-ends for many developers. He has been invited to hold talks about micro front-ends on many conferences and is the author of \textit{Micro Frontends in Action} \cite{Geers2020}.
+    
+    \item[Joel Denning] is a developer who was working on Amazon when he was tasked with solving the problem that their monolithic front-end was a development bottleneck. Inspired by Amazons famous microservice architecture, he developed a micro front-end architecture, which later became the foundation for single-spa. Single-spa is now one of the largest micro front-end composition technologies. He has also worked at Canopy as a front-end team lead until mid 2019, and have since started working as a consultant, helping companies with migrating to and using single-spa.
+    
+    \item[Luca Mezzalira] was mentioned by three of the other experts as being a central authority in the subject of micro front-ends. As a chief architect and VP of Architecture he has been a vital part of building the architecture for DAZN, a streaming platform with millions of concurrent global users, and hundreds of developers. He regularly speaks at conferences where he promotes the pragmatic micro front-end approach used by DAZN. He is also the author of \textit{Building Micro-Frontends} \cite{temp}.
+    
+    \item[Zackary Jackson] has worked as a Senior Frontend Developer at Fiverr and Senior Frontend Architect at Starbucks. At both companies he has worked with refactoring and restructuring the monolithic front-ends into micro front-end applications. He has a background in providing web experiences to users with a slow internet connection, which explains his dedication to minimizing bundle sizes. His work on reducing code duplication lead to him becoming a maintainer of the famous JavaScript module bundler webpack. Zack introduced the flagship feature for webpack version 5, module federation, which enables micro front-ends to share modules and components, with the primary goal of reducing bundle sizes fetched by client devices.
+    
+    \item[J\'er\'emy Colin] is a Senior Software Engineer on a Platform Team at \textit{Zalando}. Zalando is famous for their micro front-end suite mosaic, and is often mentioned for being on the forefront of introducing cutting edge micro front-end technologies. J\'er\'emy works with creating their next-generation web architecture, \textit{Interface Framework} \cite{temp}, where parts are heavily inspired from relay \cite{temp}, which J\'er\'emy worked extensively with at \textit{Searchmetrics}. Interface Framework introduces cutting edge concepts like bundling data dependencies together with micro front-end fragments, a recommendation engine that dynamically selects fragments for the optimal user experience, and server side composed isomorphicly rendered micro front-ends.
+\end{description}
+
+\subsection{The questions asked}
+
+
+\section{Survey Results}
+
+
+
+\section{(old. this is just notes that can be ignored) Interview with Michael Geers}
+Michael Geers is a developer working for \textit{neuland - Büro für Informatik}. He has worked with large scale e-commerce projects using micro front-ends for 11 (not really) years. Michael Geers is also the creator of \texttt{https://micro-frontends.org/}, the author of \textit{Micro Frontends in Action} \cite{Geers2020}, and has been invited to hold talks about micro front-ends on many conferences.
+
+An interview with Michael Geers was conducted, to ensure that any findings were based on the state of the art in micro front-ends. The interview was centered around Michael's practical experience with micro front-ends, the problems he has faced, and what solutions exists to solve those problems.
+
+- He has not used unified single page applications, because the drawbacks do not fit his purpose
+
+- Shell applications are very important to keep lean. If the integration layer should have any business logic like user authentication or x, it should have a dedicated team managing it.
+
+- There are different ways of using micro front-ends, vertical slicing or separated back-end and front-end, using a microservice/micro front-end architecture.
+
+- Portals is a cool new technology (https://wicg.github.io/portals/)
+
+- Micro Front-ends does not inherently have any positive effects to the user experience of an app. It can however have indirect positive effects from increased software quality. Example: CSS from interview.
+
+- DDD
+
+\subsection{Asset management}

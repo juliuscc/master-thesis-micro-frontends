@@ -1,13 +1,11 @@
 \documentclass{report}
 \usepackage[utf8]{inputenc}
 
-\title{Migrating to Micro Frontends -- Taking it One Step at a Time}
+\title{Plutt: Strict Type Checking, Semantic Versioning, and Location Transparency in Micro Front-end Components}
 \author{Julius Celik \texttt{<jcelik@kth.se>}}
 \date{\today}
 
 \usepackage[euler]{textgreek}
-
-\newcommand{\fe}{\textmugreek FE}
 
 \setlength{\parindent}{0em}
 \setlength{\parskip}{1em}
@@ -24,33 +22,49 @@
 % For blockquotes
 \usepackage{csquotes}
 
+\usepackage{enumitem}
+
+% For subfigures
+\usepackage{subcaption}
+
+% For code blocks
+\usepackage{listings}
+
 
 \begin{document}
 
 \maketitle
 
+\setlength{\parskip}{0em}
+\tableofcontents
+\setlength{\parskip}{1em}
+
+
 \include{sections/0-acronymns}
 % \include{sections/1-introduction}
 \include{sections/2-background}
 \include{sections/3-related-work}
-% \include{sections/4-method}
+\include{sections/4-interviews}
+\include{sections/5-design}
+\include{sections/6-case-studies}
+\include{sections/7-discussion}
+\include{sections/8-conclusion}
 
+% \chapter{Misc}
 
-\chapter{Misc}
+% \section{How to load the JS}
+% Write about the decision of how to load/fetch JS.
 
-\section{How to load the JS}
-Write about the decision of how to load/fetch JS.
-
-\begin{itemize}
-    \item Append script to page. 
+% \begin{itemize}
+%     \item Append script to page. 
     
-    I got the idea from this: (https://www.danielcrabtree.com/blog/25/gotchas-with-dynamically-adding-script-tags-to-html)
+%     I got the idea from this: (https://www.danielcrabtree.com/blog/25/gotchas-with-dynamically-adding-script-tags-to-html)
     
-    I used this: (https://stackoverflow.com/a/27468484)
-    \item Dynamic import. "Dynamic import is useful in situations where you wish to load a module conditionally, or on-demand." \cite{MDNWebDocs2020}
-\end{itemize}
+%     I used this: (https://stackoverflow.com/a/27468484)
+%     \item Dynamic import. "Dynamic import is useful in situations where you wish to load a module conditionally, or on-demand." \cite{MDNWebDocs2020}
+% \end{itemize}
 
-\section{Webpack vs Rollup}
+% \section{Webpack vs Rollup}
 
 \printbibliography
 
