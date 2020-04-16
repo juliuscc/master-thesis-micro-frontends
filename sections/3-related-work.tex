@@ -16,7 +16,7 @@ An essential common aspect, between microservices and micro front-ends, is the p
     \label{fig:evolution-of-decomposition-strategies}
 \end{figure}
 
-Even though \citeauthor{Geers2020} preferably envisions micro front-ends as fully vertically aligned with the back-end, that does not have to be the case. Many micro front-ends exist apply the architecture patterns of microservices, without being fully aligned with the back-end. Figure \ref{fig:micro-frontend-alignment} presents three approaches to aligning a micro front-end to a back-end. A \textit{Shallow Micro Front-end} is a micro front-end that is in no way aligned to the back-end. The back-end can be one monolith, microservices behind one API-Gateway or multiple services. Based on Conway's law, this probably also means that there exists development teams that work only on the back-end or only on the front-end \cites{Conway}. A \textit{Vertically Aligned Micro Front-end} is when there is a dedicated back-end service that the micro front-end primarily communicates with. A \textit{Monolithic Micro Front-end} is when a micro front-end is a part of a server side rendered monolith, where the back-end and front-end is delivered in one monolithic application. These
+Even though \citeauthor{Geers2020} preferably envisions micro front-ends as fully vertically aligned with the back-end, that does not have to be the case. Many micro front-ends exist apply the architecture patterns of microservices, without being fully aligned with the back-end. Figure \ref{fig:micro-frontend-alignment} presents three approaches to aligning a micro front-end to a back-end. A \textit{Shallow Micro Front-end} is a micro front-end that is in no way aligned to the back-end. The back-end can be one monolith, microservices behind one API-Gateway or multiple services. Based on Conway's law, this probably also means that there exists development teams that work only on the back-end or only on the front-end \cites{Conway}. A \textit{Vertically Aligned Micro Front-end} is when there is a dedicated back-end service that the micro front-end primarily communicates with. A \textit{Monolithic Micro Front-end} is when a micro front-end is a part of a server side rendered monolith, where the back-end and front-end is delivered in one monolithic application. These ...
 
 \begin{figure}
     \centering
@@ -69,6 +69,8 @@ All existing client side integration methods can be used for fragment compositio
 A much newer web-native standard is web components, which in practice is a suite of four web technology standards \cite{MDNWebDocs}. They allow dynamic custom elements to be defined and registered, in an encapsulated scope \cite{MDNWebDocs}. They are used by Google on large products like Youtube to include highly interactive elements \cite{ThePolymerProjectc}.
 
 Figure \ref{fig:web-components} shows an example of how an example web component is created, defined, and what the \ac{DOM} is evaluated into. There are fewer drawbacks with using web components compared with using iframes, but some still exist. The largest issue is that web components do not server side rendering, as they have to be run in a browser at the client \cite[ch.~5]{Geers2020}. This issue can become a problem for performance, accessibility, and search engine optimization. Another drawback, compared with using build-time integration, is the lack of static annotations and analysis. Web components can be internally statically analyzed, but there does not exist any mechanism to share static annotations across the boundary of a web component.
+
+\textbf{TODO: try to find academia about web components or custom elements}
 
 \begin{figure}
 \centering
@@ -135,3 +137,5 @@ There exists micro front-end meta-frameworks that utilize other technologies tha
 \textbf{I know this is a bad title. What should I call this? It is for work that is being done which is amazing and boundary pushing (will redefine how micro front-ends are used), but not 100\% production ready or public yet.}
 
 Mention Deja vu, Zalandos new framework, Module federation, and portals.
+
+\textbf{WOW! https://github.com/runem/web-component-analyzer}

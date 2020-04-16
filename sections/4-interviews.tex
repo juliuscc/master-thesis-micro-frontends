@@ -3,32 +3,134 @@
 
 A qualitative survey was conducted with five industry experts, to understand how micro front-ends are used in practice and what problems they are applied to. The purpose was to discover aspects that can not be found in existing literature, and compile a common collection of micro front-end knowledge. This contributes to a knowledge base that can be used for developing Plutt and to help other micro front-end research.
 
-\section{How the Interviews Were Conducted}
+\section{Intervied Protocol}
 
 The experts interviewed were chosen based on their contributions to improving micro front-end methodologies or technologies, as well as having an extensive experience in working with micro front-ends. Some were found by their contributions being very public, and others were found recursively by asking the other experts.
 
 To minimize the risk for bias, the questions were standardized. This also made it easier to compare the answers and understand what the experts agreed on and disagreed on. The questions were open ended, and unstructured counter questions were asked to further extract relevant knowledge. The interviews were between 60 and 90 minutes long\footnote{One interview took 4 hours, even though I had planned for 60-90 minutes. A lot of that time was discussing implementation details that is not relevant to the report. So the \textit{relevant} content is about the same as other interviews. Is that noteworthy, or should I just write that the interviews took 60-90 minutes?} and because of large geographical distances they were conducted over video call. They were recorded and can accessed by request.
 
-\subsection{The Industry Experts who Were Interviewed}
+\subsection{Interviewees}
 
 \begin{description}
     \item[Michael Geers] is a developer who has worked many years for \textit{neuland - Büro für Informatik}. At neuland - Büro für Informatik he has helped large scale e-commerce web pages to use using micro front-ends. Michael is also the creator of \texttt{https://micro-frontends.org/} which at the time of writing is the first google result when searching for \textit{``micro frontends''}, and which is therefore a influential introduction to micro front-ends for many developers. He has been invited to hold talks about micro front-ends on many conferences and is the author of \textit{Micro Frontends in Action} \cite{Geers2020}.
     
     \item[Joel Denning] is a developer who was working on Amazon when he was tasked with solving the problem that their monolithic front-end was a development bottleneck. Inspired by Amazons famous microservice architecture, he developed a micro front-end architecture, which later became the foundation for single-spa. Single-spa is now one of the largest micro front-end composition technologies. He has also worked at Canopy as a front-end team lead until mid 2019, and have since started working as a consultant, helping companies with migrating to and using single-spa.
     
-    \item[Luca Mezzalira] was mentioned by three of the other experts as being a central authority in the subject of micro front-ends. As a chief architect and VP of Architecture he has been a vital part of building the architecture for DAZN, a streaming platform with millions of concurrent global users, and hundreds of developers. He regularly speaks at conferences where he promotes the pragmatic micro front-end approach used by DAZN. He is also the author of \textit{Building Micro-Frontends} \cite{temp}.
+    \item[Luca Mezzalira] was mentioned by three of the other experts as being a central authority in the subject of micro front-ends. As a chief architect and VP of Architecture he has been a vital part of building the architecture for DAZN, a streaming platform with millions of concurrent global users, and hundreds of developers. He regularly speaks at conferences where he promotes the pragmatic micro front-end approach used by DAZN. He is also the author of \textit{Building Micro-Frontends} \cite{Mezzalira2021a}.
     
-    \item[Zackary Jackson] has worked as a Senior Frontend Developer at Fiverr and Senior Frontend Architect at Starbucks. At both companies he has worked with refactoring and restructuring the monolithic front-ends into micro front-end applications. He has a background in providing web experiences to users with a slow internet connection, which explains his dedication to minimizing bundle sizes. His work on reducing code duplication lead to him becoming a maintainer of the famous JavaScript module bundler webpack. Zack introduced the flagship feature for webpack version 5, module federation, which enables micro front-ends to share modules and components, with the primary goal of reducing bundle sizes fetched by client devices.
+    \item[Zackary Jackson] has worked as a Senior Frontend Developer at Fiverr and Senior Frontend Architect at Starbucks. At both companies he has worked with refactoring and restructuring the monolithic front-ends into micro front-end applications. He has a background in providing web experiences to users with a slow internet connection, which explains his dedication to minimizing bundle sizes. His work on reducing code duplication lead to him becoming a maintainer of the famous JavaScript module bundler webpack. Zackary introduced the flagship feature for webpack version 5, module federation, which enables micro front-ends to share modules and components, with the primary goal of reducing bundle sizes fetched by client devices.
     
-    \item[J\'er\'emy Colin] is a Senior Software Engineer on a Platform Team at \textit{Zalando}. Zalando is famous for their micro front-end suite mosaic, and is often mentioned for being on the forefront of introducing cutting edge micro front-end technologies. J\'er\'emy works with creating their next-generation web architecture, \textit{Interface Framework} \cite{temp}, where parts are heavily inspired from relay \cite{temp}, which J\'er\'emy worked extensively with at \textit{Searchmetrics}. Interface Framework introduces cutting edge concepts like bundling data dependencies together with micro front-end fragments, a recommendation engine that dynamically selects fragments for the optimal user experience, and server side composed isomorphicly rendered micro front-ends.
+    \item[J\'er\'emy Colin] is a Senior Software Engineer on a Platform Team at \textit{Zalando}. Zalando is famous for their micro front-end suite mosaic, and is often mentioned for being on the forefront of introducing cutting edge micro front-end technologies. J\'er\'emy works with creating their next-generation web architecture, \textit{Interface Framework} \cite{Colin2018}, where parts are heavily inspired from relay \cite{FacebookInc.a}, which J\'er\'emy worked extensively with at \textit{Searchmetrics}. Interface Framework introduces cutting edge concepts like bundling data dependencies together with micro front-end fragments, a recommendation engine that dynamically selects fragments for the optimal user experience, and server side composed isomorphically rendered micro front-ends.
 \end{description}
 
-\subsection{The questions asked}
+\subsection{Interview Questions}
 
+The questions asked during the interviews where a mix of standardized questions and personalized questions that were related to the interviewees specific contributions and experience. Additional follow up questions were asked for a deeper understanding of the answers. The 12 standardized Interview Questions (IQ) are the following:
+
+{
+\setlist[enumerate,1]{label={\textbf{IQ \arabic*}}}
+\begin{enumerate}
+\item Could you tell me shortly about your experience with micro front-ends?
+
+\item What is your definition of micro front-ends?
+
+\item What would you say that the relation between microservices and micro front-ends is?
+
+\item When should an organization look into using micro front-ends?
+
+\item What are the benefits of micro front-ends?
+
+\item Do you think that micro front-ends provide better UX?
+
+\item How many micro front-ends should a team own?
+
+\item How do you decide on where to place boundaries between micro front-ends?
+
+\item What are your thoughts about team responsibilities when working on a micro front-end architecture? How and by whom is the orchestration handled?
+
+\item Can the orchestration layer include user authentication and other global responsibilities?
+
+\item Where is this field going in the future? What will you be working on?
+
+\item Is there anything else you think I should know?
+\end{enumerate}
+}
+
+The purpose of the first question was to fully understand the interviewees background, and to understand how that could effect the other questions. To understand what a micro front-end is, and to further understand the point of view of the interviewees answers, IQ 2 and 3 were asked. The later answers differed because the different interviewees had different definitions of micro front-ends, and where therefore discussing different aspects.
+
+IQ 4-6 were meant to understand why micro front-ends are used, and what problems they aim to solve. IQ 7-10 were asked to understand how micro front-ends are and should be used. The last two questions aimed to complement the other questions with anything that was not discussed during the interview.
+
+\textbf{Note: This section could be linked to research questions instead.}
 
 \section{Survey Results}
 
+\subsection{What is a micro front-end?}
 
+The definition is very different when asking different experts, however there were three main aspects that were mentioned, even though not everyone agreed on them. They were independent deployability, isolation, and organizational alignment to business domain.
+
+\textbf{Joel's} definition of micro front-ends is \blockquote{An independently deployable chunk, of your front-end web application.} Joel was humble to that the definition is not fully defined yet, and still evolving, but emphasizes that he believes that independent deployments is the most important aspect, and that build-time integration is a ``monolithic build'' and ``monolithic deployment''. He motivates this both by his definition of microservices, and the reason he thinks micro front-ends are being used:
+
+\blockquote{The problems that micro front-ends solve, are largely organizational problems, not technical problems. And I think that one of the biggest organizational problems that is solved, is [...] different parts of an organization, being able to act independently. Being able to release their code to production without getting approval from everyone else.}
+
+His rough definition of microservices is that microservices are only microservices if they are:
+
+\begin{itemize}
+    \item running on a seperate process
+    \item communicating via network
+    \item independently deployable
+    \item have their own data store
+    \item have their own build CI/CD process
+\end{itemize}
+It is impractical or even impossible for micro front-ends to communicate via network, and they are always executed on the same thread. The \ac{DOM}, which can be seen as a replacement for a data store, is shared, which means that they are accessing and mutating the same data store. The remaining technical aspects are independent deployability and separate build processes.
+
+A controversial opinion is that Joel believes there can exist micro front-ends that are non visual. That a micro front-end can provide a service to other visual micro front-ends that are visual.
+
+\textbf{Zackary's} definition is that a micro front-end has to be independently deployable and stand-alone. It was especially important that a micro front-end should work without any dependencies on it's environment, and this is an aspect that contradicts Joel's non visual micro front-ends. Non visual micro-frontends rely on other micro front-ends to update the \ac{DOM}, and if a micro front-end relies on another micro front-end, it is not self contained. Zackary was not against the concept and it's utility, but did not agree on that he would call it a micro front-end.
+
+Zackary mentioned that the back-end is a much easier monolith to break apart into microservices, than the front-end is to break apart into micro front-ends. This relationship is based on that there exists many more technical constraints on the front-end than on the back-end.
+
+\textbf{Michael and Luca's} point of view is much more an organizational. Michael is open to many different definitions but believe that micro front-ends work as a tool to align the back-end with the front-end, using fully vertically aligned teams. Luca does not agree that vertical alignment is necessary, and has a very concrete definition. It doesn't mention visual aspects in any way, and only focuses around organizational aspects. \blockquote{A micro-frontend represents a business domain that is autonomous, is independently deliverable, and is owned by a team.} This definition is very vague from a technological perspective, but is very strict in how they should be applied in an organisation. Both Michael and Luca use \textit{Domain Driven Design} to design their systems.
+
+\textbf{For J\'er\'emy} micro front-ends are an isolated piece of UI. They are isolated in the sense of coupling, and not in the sense of deployments. The most important aspect for J\'er\'emy is that micro front-ends simplifies complexity management. This is very similar to Zackary's point of view, with the exception that J\'er\'emy allows synchronized deployments, and even mono-repositories in his definition.
+
+To summarize, most agree on that microservices is a technical tool to solve an organizational problem. This is done by allowing teams to work more independently. Some believe the independence originates from the strictly decoupled design, while others believe it originates from independent deployments and mostly decoupled design. A micro front-end can possibly be a non-visual component that provides services to other micro front-ends, and that is tied to if the micro front-ends have to be strictly stand-alone or not. Micro front-ends borrow many aspects from microservices, but because of the vastly different execution environments and different constraints, they are also different in many ways. The area of microservice research can be seen as a source of desirable end-results and principles, and not a strict source for specific methods and processes.
+
+\subsection{Why are micro front-ends being used?}
+
+There was a clear consensus that micro front-ends solve complexity problems that arise when there are too many developers working on the same front-end. Solving the scalability problems, can have other indirect positive consequences, like a higher software quality, fewer published bugs, and counterintuitively higher performance. 
+
+Joel was the only interviewee that used microfrontends primarily for ... less code duplication. Michael asset management css bla bla.
+
+\textbf{Michael:} If a monolith is has grown to be too complicated. MFEs gives you a solution to give you clear boundaries. It also gives you a tool to gradually rewrite a large front-end. Like for migrating to a new technology.
+
+For Michael it was always for organizational reasons. For creating vertically aligned teams. The benefit for him is that any time he wants to change or add a feature, he only has to discuss it and align it with one team that owns that feature domain. This is opposite to having to align multiple teams to add or change one feature. Like database, back-end and front-end teams.
+
+A desirable goal is to have as much work and communication as possible being done inside teams, and reducing the need for communication and synchronization between teams.
+
+\textbf{Luca:} Start using at 50 devs.
+
+- Independent deployability
+
+- Fault isolation
+
+- Smaller and easier to work with
+
+- Live support. Quick to do hotfixes.
+
+\textbf{Zackary and Joel:} For a no compromise user experience. Both use micro front-ends to minimize initial bundle load, to maximize metrics like tti or time to first render
+
+
+\subsection{How are micro front-ends used in practice?}
+
+\textbf{Michael:} Pages are a good division to start with. DDD, and sets of pages are very easy to align with \textit{domains}, with some shared components sprinkled in.
+
+From michael: ``\textbf{No cross-team API communication:} To do its work, a micro frontend should only talk to the backend infrastructure of its team. A micro frontend from Team A would never directly talk to an API endpoint from Team B. This would introduce coupling and inter-team dependencies. Even more important, you give up isolation. To run an test your system, the system from the other team needs to be present. An error in Team B would also affect fragments from Team A.''
+
+\textbf{Remember to mention layout as a side effect somewhere}
+
+\textbf{Mention no shared state. Like with micro services.}
+
+Luca was very cautious in answering this, and referenced me to an orreiley talk where Mark Richards said ``Everything in software architecture is a trade-off.'' 
 
 \section{(old. this is just notes that can be ignored) Interview with Michael Geers}
 Michael Geers is a developer working for \textit{neuland - Büro für Informatik}. He has worked with large scale e-commerce projects using micro front-ends for 11 (not really) years. Michael Geers is also the creator of \texttt{https://micro-frontends.org/}, the author of \textit{Micro Frontends in Action} \cite{Geers2020}, and has been invited to hold talks about micro front-ends on many conferences.
